@@ -1,0 +1,138 @@
+<div class="flex justify-center items-center h-screen bg-gray-500">
+  <div class="border border-gray-300 bg-white rounded-lg p-8 max-w-md w-full">
+    <div class="p-4">
+      <h2 class="text-2xl font-bold mb-4 flex justify-center">
+        Registration Form
+      </h2>
+    </div>
+    <form
+      [formGroup]="userForm"
+      (submit)="onSaveUser()"
+      class="max-w-md mx-auto"
+    >
+      <!-- Form fields -->
+      <!-- First Name -->
+      <div class="mb-4">
+        <div>
+          <label for="firstname" class="block text-sm font-medium text-gray-700"
+            >First Name</label
+          >
+          <input
+            id="firstname"
+            type="text"
+            formControlName="firstName"
+            class="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+          />
+          <div
+            class="text-red-700 text-xs"
+            *ngIf="
+              userForm.controls['firstName'].touched &&
+              userForm.controls['firstName'].invalid
+            "
+          >
+            <span *ngIf="userForm.controls['firstName'].errors?.['required']"
+              >First Name Required</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Last Name -->
+      <div class="mb-4">
+        <div>
+          <label for="lastname" class="block text-sm font-medium text-gray-700"
+            >Last Name</label
+          >
+          <input
+            id="lastname"
+            type="text"
+            formControlName="lastName"
+            class="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+          />
+          <div
+            class="text-red-700 text-xs"
+            *ngIf="
+              userForm.controls['lastName'].touched &&
+              userForm.controls['lastName'].invalid
+            "
+          >
+            <span *ngIf="userForm.controls['lastName'].errors?.['required']"
+              >Last Name Required</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="mb-4">
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-700"
+            >Email</label
+          >
+          <input
+            id="email"
+            type="text"
+            formControlName="email"
+            class="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+          />
+          <div
+            class="text-red-700 text-xs"
+            *ngIf="
+              userForm.controls['email'].touched &&
+              userForm.controls['email'].invalid
+            "
+          >
+            <span *ngIf="userForm.controls['email'].errors?.['required']"
+              >Email Required</span
+            >
+            <span *ngIf="userForm.controls['email'].errors?.['email']"
+              >Enter valid Email</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Password -->
+      <div class="mb-4">
+        <div>
+          <label for="password" class="block text-sm font-medium text-gray-700"
+            >Password</label
+          >
+          <input
+            id="password"
+            type="password"
+            formControlName="password"
+            class="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+          />
+          <div
+            class="text-red-700 text-xs"
+            *ngIf="
+              userForm.controls['password'].touched &&
+              userForm.controls['password'].invalid
+            "
+          >
+            <span *ngIf="userForm.controls['password'].errors?.['required']"
+              >Password Required</span
+            >
+            <span *ngIf="userForm.controls['password'].errors?.['minlength']"
+              >Password must be at least 6 characters long</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="mb-4 flex justify-center">
+        <!-- Centering the button -->
+        <button
+          type="submit"
+          class="bg-indigo-500 text-white py-2 px-4 rounded-md hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+          [disabled]="userForm.invalid"
+        >
+          Register
+        </button>
+      </div>
+      <div class="hidden">Test</div>
+    </form>
+  </div>
+</div>
