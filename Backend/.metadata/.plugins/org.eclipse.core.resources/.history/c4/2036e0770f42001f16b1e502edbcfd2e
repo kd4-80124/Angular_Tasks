@@ -1,0 +1,5 @@
+package com.app.RegistrationLogin.controller;
+
+public class UserController {
+
+}

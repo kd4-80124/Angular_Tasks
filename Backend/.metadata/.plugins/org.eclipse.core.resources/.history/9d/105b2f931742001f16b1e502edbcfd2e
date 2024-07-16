@@ -1,0 +1,38 @@
+package com.app.RegistrationLogin.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+
+import com.app.RegistrationLogin.dto.UserDTO;
+import com.app.RegistrationLogin.entity.User;
+import com.app.RegistrationLogin.repo.UserRepo;
+
+@Service
+public class UserServiceImpl implements UserService {
+
+	
+	@Autowired
+	private UserRepo userRepo;
+	
+	@Autowired
+	private PasswordEncoder passwordEncoder;
+
+	@Override
+	public String addUser(UserDTO userDTO) {
+		
+		int id = userDTO.getUserId();
+		String fname = userDTO.getFirstName();
+		String lname =userDTO.getLastName();
+		String email = userDTO.getEmail();
+		String password = userDTO.getPassword();
+		
+		User user = new User(id,fname,lname,email,this.passwordEncoder.encode(password));
+		
+		userRepo.save(user);
+	}
+	
+	
+	
+
+}

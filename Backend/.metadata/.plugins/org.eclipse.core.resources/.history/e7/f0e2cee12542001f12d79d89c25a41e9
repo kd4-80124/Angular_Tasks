@@ -1,0 +1,9 @@
+package com.app.RegistrationLogin.service;
+
+import com.app.RegistrationLogin.dto.UserDTO;
+
+public interface UserService {
+
+	String addUser(UserDTO userDTO);
+
+}

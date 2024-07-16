@@ -1,0 +1,5 @@
+package com.app.RegistrationLogin.response;
+
+public class LoginResponse {
+
+}

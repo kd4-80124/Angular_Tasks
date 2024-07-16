@@ -1,0 +1,5 @@
+package com.app.RegistrationLogin.config;
+
+public class SecurityConfig {
+
+}

@@ -1,0 +1,13 @@
+package com.app.RegistrationLogin.service;
+
+import com.app.RegistrationLogin.dto.LoginDTO;
+import com.app.RegistrationLogin.dto.UserDTO;
+import com.app.RegistrationLogin.response.LoginResponse;
+
+public interface UserService {
+
+	String addUser(UserDTO userDTO);
+
+	LoginResponse loginUser(LoginDTO loginDTO);
+
+}

@@ -1,0 +1,5 @@
+package com.app.RegistrationLogin.repo;
+
+public interface UserRepo {
+
+}
